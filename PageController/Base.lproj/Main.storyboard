@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p6i-r4-pRB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="hcS-pE-49L">
+            <objects>
+                <viewController id="p6i-r4-pRB" customClass="MainViewController" customModule="PageViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fiz-mx-TOu"/>
+                        <viewControllerLayoutGuide type="bottom" id="ijy-xf-Fm7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HKn-vo-wnQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCH-kB-B42" userLabel="Paged Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="tUi-hW-sg2" kind="embed" id="iko-sg-6Sq"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OCH-kB-B42" secondAttribute="trailing" id="gbO-TJ-gUf"/>
+                            <constraint firstItem="OCH-kB-B42" firstAttribute="leading" secondItem="HKn-vo-wnQ" secondAttribute="leading" id="oUQ-vW-2NU"/>
+                            <constraint firstItem="OCH-kB-B42" firstAttribute="top" secondItem="HKn-vo-wnQ" secondAttribute="top" id="qUk-Zr-7Cu"/>
+                            <constraint firstItem="ijy-xf-Fm7" firstAttribute="top" secondItem="OCH-kB-B42" secondAttribute="bottom" id="zLI-rJ-b3P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rmx-Lr-oOC"/>
+                    </view>
+                    <connections>
+                        <outlet property="pagedContainerView" destination="OCH-kB-B42" id="0OZ-XU-E0w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLo-Fl-WBc" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-80.799999999999997" y="147.97601199400302"/>
+        </scene>
+        <!--Test Page View Controller-->
+        <scene sceneID="vYT-wR-jeK">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="tUi-hW-sg2" customClass="TestPageViewController" customModule="PageViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pIk-jS-loa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491" y="863"/>
+        </scene>
+        <!--Test Collection View Controller-->
+        <scene sceneID="aGq-T4-qhs">
+            <objects>
+                <collectionViewController storyboardIdentifier="CollectionViewController" id="gXs-Im-0zV" customClass="testCollectionViewController" customModule="PageViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XkZ-Fa-9QC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="r3V-U0-4id">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="272"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="dka-wo-C9D">
+                                <rect key="frame" x="0.0" y="272" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="vDN-IG-DTp">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="272"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHK-ec-5HQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="272"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="bHK-ec-5HQ" firstAttribute="top" secondItem="vDN-IG-DTp" secondAttribute="top" id="Uye-My-SnM"/>
+                                <constraint firstAttribute="trailing" secondItem="bHK-ec-5HQ" secondAttribute="trailing" id="VKt-lD-177"/>
+                                <constraint firstAttribute="bottom" secondItem="bHK-ec-5HQ" secondAttribute="bottom" id="iC5-9R-4uh"/>
+                                <constraint firstItem="bHK-ec-5HQ" firstAttribute="leading" secondItem="vDN-IG-DTp" secondAttribute="leading" id="uLw-OX-Wof"/>
+                            </constraints>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="gXs-Im-0zV" id="HIt-VZ-Yrm"/>
+                            <outlet property="delegate" destination="gXs-Im-0zV" id="n4m-EM-Tu7"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYg-hu-3z0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348" y="862"/>
+        </scene>
+    </scenes>
+</document>
